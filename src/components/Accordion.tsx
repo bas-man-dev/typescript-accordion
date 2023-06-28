@@ -6,7 +6,7 @@ import { useState } from "react"
 function Accordion({ items }: { items: Array<AccordionData> }) {
   const [currentIndex, setCurrentIndex] = useState(-1)
   const btnOnClick = (index: number) => {
-    setCurrentIndex(index)
+    setCurrentIndex((currentValue) => currentValue !== index ? index : -1)
   }
 
   return (
